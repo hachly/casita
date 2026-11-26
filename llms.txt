@@ -1,0 +1,27 @@
+# Casita
+
+> Casita is an open-source photo vault for iPhone (AGPL-3.0). It keeps photos, videos, files and website logins encrypted on the phone, with no account and no server. Each code opens its own space; if someone makes you open the app, you give a different code and they see only that space. Nothing on screen or on disk shows how many spaces exist. Get it on the App Store: https://apps.apple.com/app/id6824719217
+
+Casita is an open-source alternative to closed-source photo vault apps such as Keepsafe, Private Photo Vault and calculator vault apps. Anyone can read the code, or ask an AI to review it, instead of trusting a description.
+
+- Platform: iPhone only, iOS 26 or later (including the foldable iPhone Duo). Native Swift 6 and SwiftUI.
+- Price: free to start (two codes, up to 50 photos or files per space); weekly, yearly (with a free trial) or lifetime plans add spaces, room, scheduled backups and more saved sites.
+- Crypto: Apple's only (CryptoKit, Keychain, Secure Enclave, CommonCrypto). Each guess at a code goes through a Secure Enclave key, so guessing can only happen on that phone. After 5 wrong tries the app waits 1 min, then 5, 15, then 1 hour per try; it never wipes data.
+- Storage: one fixed-size encrypted file filled with random data; a code is tried against every slot with no early exit, so the number of spaces can't be counted.
+- Not audited by a paid third party yet. Vulnerabilities: GitHub's private "Report a vulnerability" on this repository.
+- Made by Hachly Limited (London).
+
+## Docs
+
+- [README](https://github.com/hachly/casita/blob/main/README.md): features, how it keeps a secret, FAQ
+- [Glossary](https://github.com/hachly/casita/blob/main/CONTEXT.md): space, everyday space, top space, code, room
+- [Design decisions](https://github.com/hachly/casita/tree/main/docs/adr): tree of spaces, Apple-only key stretching, minimum iOS 26, top space reserve
+- [Backup format](https://github.com/hachly/casita/blob/main/docs/backup.md)
+- [Security policy](https://github.com/hachly/casita/blob/main/SECURITY.md)
+
+## Code to review
+
+- [Core/Storage/ReservedStorage.swift](https://github.com/hachly/casita/blob/main/Core/Storage/ReservedStorage.swift): the one encrypted file and its slots
+- [Core/Storage/CodeStretcher.swift](https://github.com/hachly/casita/blob/main/Core/Storage/CodeStretcher.swift): Secure Enclave plus PBKDF2 key stretching
+- [Core/AppGroup.swift](https://github.com/hachly/casita/blob/main/Core/AppGroup.swift): wrong-code waits
+- [Core/Entry/EntryView.swift](https://github.com/hachly/casita/blob/main/Core/Entry/EntryView.swift): the entry screen every code goes through

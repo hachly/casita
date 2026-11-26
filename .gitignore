@@ -1,0 +1,26 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.swiftpm/
+# macOS
+.DS_Store
+# Claude session files
+.claude/
+
+# Kept on the maintainers' Macs, not in the public repository:
+# marketing, App Store material, release and review notes, and the project's agent notes.
+marketing/
+store/
+CLAUDE.md
+docs/app-store-connect.md
+docs/review-notes.md
+docs/device-checks.md
+docs/next-update-insights.md
+docs/PLAN.md
+docs/testflight-*.md
+docs/backup-and-free-plan-*.md
+
+# App Store Connect CLI state
+.asc/

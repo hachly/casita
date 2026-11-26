@@ -1,0 +1,37 @@
+Casita
+Copyright (c) 2026 Hachly Limited
+
+Hachly Limited is a company registered in England and Wales, company number
+15234648. Registered office: 124 City Road, London, England, EC1V 2NX.
+Contributions are the copyright of their authors and licensed to Hachly Limited
+under CLA.md.
+
+
+LICENCE
+
+Everything in this repository not listed below: AGPL-3.0-only, see LICENSE.
+
+
+NAMES AND LOGOS
+
+The Casita and Hachly names, the Casita app icon (Casita/App/AppIcon.icon) and
+the Casita logo aren't licensed under the AGPL. For the AGPL-licensed parts,
+this is a term under AGPL section 7(e). See TRADEMARKS.md.
+
+The service logos in Casita/Web/Icons.xcassets (Discord, Facebook, Instagram,
+LinkedIn, Pinterest, Reddit, Telegram, Threads, TikTok, Tinder, X, YouTube)
+belong to their owners. They aren't licensed under the AGPL, and Casita isn't
+affiliated with or endorsed by any of these services.
+
+
+THIRD-PARTY COMPONENTS
+
+Third-party components keep their own licences.
+
+  Casita/Media/cities.tsv:
+      Built from GeoNames (geonames.org) cities1000, licensed under
+      CC BY 4.0 (creativecommons.org/licenses/by/4.0). Rebuilt with
+      Support/make-cities.py.
+
+  RevenueCat purchases-ios (fetched by Swift Package Manager):
+      MIT licence, see its repository.
